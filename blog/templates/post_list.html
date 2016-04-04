@@ -1,1 +1,4 @@
-<h1>Whats up! It's the home page! {{ dog }}</h1>
+{% for post in posts %}
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.text|linebreaks}}</p>
+{% endfor %}
