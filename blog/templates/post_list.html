@@ -1,4 +1,23 @@
-{% for post in posts %}
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.text|linebreaks}}</p>
-{% endfor %}
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="page-header text-center">
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
+
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+            {% for post in posts %}
+                <div class="post">
+                    <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                    <div class="date">
+                        {{ post.created_date }}
+                    </div>
+                    <p>{{ post.text|linebreaks }}</p>
+                </div>
+            {% endfor %}
+            </div><!--End Col-->
+        </div><!--End Row-->
+    </div><!--End Container-->
+{% endblock %}
