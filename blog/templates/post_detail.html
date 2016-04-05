@@ -1,3 +1,8 @@
+{% extends 'base.html' %}
+
+{% block page-name %}{{ post.title }}{% endblock %}
+
 {% block main %}
     <h1>{{ post.title }}</h1>
+    <p>{{ post.text }}</p>
 {% endblock %}

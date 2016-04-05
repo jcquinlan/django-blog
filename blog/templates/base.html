@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 </head>
 <body>
+
+    <div class="page-header text-center">
+        <h1><a href="/">{% block page-name %}{% endblock %}</a></h1>
+        <a href="{% url 'post_new' %}">Make a new post.</a>
+    </div>
+
     {% block main %}{% endblock %}
 
 </body>
