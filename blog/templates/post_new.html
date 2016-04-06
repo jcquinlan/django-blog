@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 
+{% block page-name %}Create a Post{% endblock %}
 {% block main %}
-    <h1>Make a new post {{ dog }}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Post</button>
+    </form>
 {% endblock %}
